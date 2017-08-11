@@ -2,15 +2,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
+import {LocalstorageService } from './service/localstorage.service';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthService } from './auth.service';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    HttpModule,
+    BrowserModule,
+    RouterModule.forRoot([
+{path:"login",component:LoginComponent},
+
+      {path:"profile",component:ProfileComponent},
+        {path:'' ,redirectTo:"login" ,pathMatch:"full"  },
+        
+    ])
   ],
-  providers: [],
+  providers: [LocalstorageService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
