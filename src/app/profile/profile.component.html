@@ -8,6 +8,10 @@
 <div   *ngIf="userprofile">
   <p>Hi {{userprofile.name}}  </p>
   <p >UserName: {{userprofile.username}} </p>
-  <img src="{{userprofile.profile_url }}"/>
+  <img src="{{userprofile.profile_url }}"/> 
 </div>
-  </div>
+<div class="calendar_div">
+<angular2-fullcalendar [options]="calendarOptions"></angular2-fullcalendar>
+</div>  
+
+</div>

@@ -8,11 +8,14 @@ import { AuthService } from './auth.service';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HttpModule } from '@angular/http';
+import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
+
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    CalendarComponent
   ],
   imports: [
     HttpModule,
