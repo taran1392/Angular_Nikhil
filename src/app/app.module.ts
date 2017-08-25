@@ -9,16 +9,18 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HttpModule } from '@angular/http';
 import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
-
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     LoginComponent,
-    CalendarComponent
+    CalendarComponent,
+    FileUploadComponent
   ],
   imports: [
-    HttpModule,
+    HttpModule,ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot([
 {path:"login",component:LoginComponent},
