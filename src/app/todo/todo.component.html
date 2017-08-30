@@ -1,0 +1,15 @@
+
+
+<div class="half">
+  <h2>Completed Tasks</h2>
+  <app-todo-task  *ngFor="let t of completedTasks"   [task]="t"   (stateChanged)="taskClicked($event)"  > </app-todo-task>  
+
+</div>
+
+
+<div class="half">
+    <h2>Pending Tasks</h2>
+    <app-todo-task  *ngFor="let t of pendingTasks"   [task]="t"  (stateChanged)="taskClicked($event)" > </app-todo-task>  
+      
+    
+    </div>

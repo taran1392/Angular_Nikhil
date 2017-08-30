@@ -1,0 +1,7 @@
+
+<div>
+  <h4 (click)="showHideContent()" >{{task.task}}</h4>
+   <button (click)="changeState()" > (ST) </button><button> (X) </button>
+<p  *ngIf="hideDesc" >{{task.desc}}</p>
+
+</div>

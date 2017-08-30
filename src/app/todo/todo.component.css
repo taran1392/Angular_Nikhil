@@ -1,0 +1,12 @@
+.half{
+
+    width:40%;
+    float: left;
+    padding: 20px;
+
+}
+
+.half:nth-child(2){
+
+    border-left: 1px solid black;
+}

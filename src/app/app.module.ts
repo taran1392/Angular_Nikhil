@@ -11,19 +11,23 @@ import { HttpModule } from '@angular/http';
 import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
+import { TodoTaskComponent } from './todo-task/todo-task.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     LoginComponent,
     CalendarComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    TodoComponent,
+    TodoTaskComponent
   ],
   imports: [
     HttpModule,ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot([
-{path:"login",component:LoginComponent},
+{path:"login",component:TodoComponent},
 
       {path:"profile",component:ProfileComponent},
         {path:'' ,redirectTo:"login" ,pathMatch:"full"  },
