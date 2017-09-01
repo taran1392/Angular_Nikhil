@@ -13,6 +13,13 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
 import { TodoTaskComponent } from './todo-task/todo-task.component';
+import { AngularFireModule } from 'angularfire2';
+import { TestComponent } from './test/test.component';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { TestFormComponent } from './test-form/test-form.component';
+import { NavabrComponent } from './navabr/navabr.component'
+import { ROUTES } from './routes';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,20 +28,28 @@ import { TodoTaskComponent } from './todo-task/todo-task.component';
     CalendarComponent,
     FileUploadComponent,
     TodoComponent,
-    TodoTaskComponent
+    TodoTaskComponent,
+    TestComponent,
+    TestFormComponent,
+    NavabrComponent
   ],
   imports: [
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyAK6IVXqehh7g1LqcJGK3WKykLq6id5tVA",
+      authDomain: "invento-7d49c.firebaseapp.com",
+      databaseURL: "https://invento-7d49c.firebaseio.com",
+      projectId: "invento-7d49c",
+      storageBucket: "invento-7d49c.appspot.com",
+      messagingSenderId: "422314890274"
+    }
+  )
+    ,
     HttpModule,ReactiveFormsModule,
     BrowserModule,
-    RouterModule.forRoot([
-{path:"login",component:TodoComponent},
-
-      {path:"profile",component:ProfileComponent},
-        {path:'' ,redirectTo:"login" ,pathMatch:"full"  },
-        
-    ])
+    RouterModule.forRoot(ROUTES)  
+  
   ],
-  providers: [LocalstorageService,AuthService],
-  bootstrap: [AppComponent]
+    providers: [LocalstorageService,AuthService,AngularFireDatabase],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

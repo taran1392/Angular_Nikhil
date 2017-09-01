@@ -1,0 +1,16 @@
+a{
+
+    float: left;
+    display: inline-block;
+    background: gray;
+    margin-left: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    
+}
+
+.active{
+
+        background: blueviolet;
+    
+}
